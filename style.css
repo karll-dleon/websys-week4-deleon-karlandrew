@@ -1,0 +1,201 @@
+/* 001: Global Reset & Box Model Setup */
+*, *::before, *::after {
+    box-sizing: border-box; /* Ensures padding/borders are included in total width/height */
+}
+
+/* 002: Custom Color Palette */
+:root {
+    --dark-red: #8c0007;
+    --black-olive: #25291c;
+    --platinum: #e6e1de;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--platinum); /* Light, clean background */
+    color: var(--black-olive); /* High contrast text */
+    line-height: 1.8; /* Improved typography readability */
+    margin: 0;
+    padding: 0;
+}
+
+/* 003: Header Styling */
+header {
+    background-color: var(--dark-red);
+    color: var(--platinum);
+    text-align: center;
+    padding: 50px 20px; /* Internal spacing */
+    border-bottom: 8px solid var(--black-olive); 
+}
+
+header h1 {
+    margin: 0 0 10px 0; /* Typography spacing */
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--platinum);
+}
+
+/* 004: Navigation Styling */
+nav {
+    background-color: var(--black-olive);
+    border-bottom: 4px solid var(--dark-red);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 15px 0; /* Improved navigation spacing */
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between nav items */
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 25px;
+    text-decoration: none;
+    color: var(--platinum);
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background-color: var(--dark-red);
+    color: var(--platinum);
+}
+
+/* 005: Main Content & Layout */
+main {
+    max-width: 900px;
+    margin: 50px auto; /* Outer spacing to separate from header/footer */
+    padding: 0 20px;
+}
+
+/* 006: Section Cards (Box Model & Hover Effects) */
+section {
+    background-color: #ffffff; /* Clean white card */
+    padding: 40px; /* Internal content spacing */
+    margin-bottom: 40px; /* External spacing between sections */
+    border-radius: 12px;
+    border-top: 5px solid var(--dark-red); /* Border addition */
+    box-shadow: 0 4px 10px rgba(37, 41, 28, 0.1); /* Subtle shadow using Black Olive */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Prepares for hover effect */
+}
+
+/* The Float/Hover Effect */
+section:hover {
+    transform: translateY(-8px); /* Lifts the card up */
+    box-shadow: 0 15px 25px rgba(37, 41, 28, 0.2); /* Deepens the shadow */
+}
+
+/* 007: Typography Spacing */
+h3 {
+    color: var(--dark-red);
+    margin-top: 0;
+    margin-bottom: 20px; /* Typography spacing */
+    font-size: 1.8rem;
+    border-bottom: 2px solid var(--platinum);
+    padding-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+ul, ol {
+    margin-bottom: 20px;
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 12px; /* Breathing room between list items */
+}
+
+a {
+    color: var(--dark-red);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--black-olive);
+}
+
+/* 008: Profile Picture Settings */
+.profile-pic {
+    display: block;
+    margin: 0 auto 30px auto;
+    max-width: 200px;
+    height: auto;
+    border: 4px solid var(--dark-red);
+    box-shadow: 8px 8px 0px var(--black-olive);
+    border-radius: 50%; /* Modern circle crop */
+}
+
+/* 009: Photostrip Grid Layout */
+.photostrip-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    background-color: var(--platinum);
+    padding: 25px;
+    border: 5px solid var(--black-olive);
+    border-radius: 8px;
+}
+
+.photo-item {
+    background: var(--black-olive);
+    padding: 10px;
+    text-align: center;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover {
+    transform: scale(1.03); /* Slight zoom on individual photos */
+}
+
+.photo-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-radius: 2px;
+}
+
+.photo-item .desc {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--platinum);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 010: Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: var(--black-olive);
+    color: var(--platinum);
+    font-style: italic;
+    border-top: 5px solid var(--dark-red);
+}
